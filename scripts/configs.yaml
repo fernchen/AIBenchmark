@@ -1,0 +1,232 @@
+val_txt: ../data/ILSVRC2012/val.txt
+val_imgs_dir: /home/fern/datasets/val/
+
+Alexnet:
+  name: alexnet
+  proto_file: ../models/caffe/alexnet/bvlc_alexnet.prototxt
+  blob_file: ../models/caffe/alexnet/bvlc_alexnet.caffemodel
+  pre_func_name: alexnet_preprocess
+  params:
+    mean_val: ../data/ILSVRC2012/imagenet_mean.npy
+    resize_size:
+      - 256
+      - 256
+    crop_size: 227
+
+Resnet50:
+  name: resnet50
+  proto_file: ../models/caffe/resnet/ResNet-50-deploy.prototxt
+  blob_file: ../models/caffe/resnet/ResNet-50-model.caffemodel
+  pre_func_name: resnet_preprocess
+  params:
+    mean_val: ../models/caffe/resnet/ResNet_mean.npy
+    resize_size: 256
+    crop_size: 224
+
+Resnet101:
+  name: resnet101
+  proto_file: ../models/caffe/resnet/ResNet-101-deploy.prototxt
+  blob_file: ../models/caffe/resnet/ResNet-101-model.caffemodel
+  pre_func_name: resnet_preprocess
+  params:
+    mean_val: ../models/caffe/resnet/ResNet_mean.npy
+    resize_size: 256
+    crop_size: 224
+
+Resnet152:
+  name: resnet152
+  proto_file: ../models/caffe/resnet/ResNet-152-deploy.prototxt
+  blob_file: ../models/caffe/resnet/ResNet-152-model.caffemodel
+  pre_func_name: resnet_preprocess
+  params:
+    mean_val: ../models/caffe/resnet/ResNet_mean.npy
+    resize_size: 256
+    crop_size: 224
+
+Mobilenetv1:
+  name: mobilenetv1
+  proto_file: ../models/caffe/mobilenet/mobilenet_deploy.prototxt
+  blob_file: ../models/caffe/mobilenet/mobilenet.caffemodel
+  pre_func_name: mobilenet_preprocess
+  params:
+    mean_val:
+      - 103.94
+      - 116.78
+      - 123.68
+    input_scale: 0.017
+    resize_size: 256
+    crop_size: 224
+
+Mobilenetv2:
+  name: mobilenetv2
+  proto_file: ../models/caffe/mobilenet/mobilenet_v2_deploy.prototxt
+  blob_file: ../models/caffe/mobilenet/mobilenet_v2.caffemodel
+  pre_func_name: mobilenet_preprocess
+  params:
+    mean_val:
+      - 103.94
+      - 116.78
+      - 123.68
+    input_scale: 0.017
+    resize_size: 256
+    crop_size: 224
+
+Inceptionv1:
+  name: inceptionv1
+  proto_file: ../models/caffe/inception/bvlc_googlenet.prototxt
+  blob_file: ../models/caffe/inception/bvlc_googlenet.caffemodel
+  pre_func_name: inception_preprocess
+  params:
+    mean_val:
+      - 104.0
+      - 117.0
+      - 123.0
+    resize_size:
+      - 256
+      - 256
+    crop_size: 224
+
+Inceptionv3:
+  name: inceptionv3
+  proto_file: ../models/caffe/inception/inception-v3.prototxt
+  blob_file: ../models/caffe/inception/inception-v3.caffemodel
+  pre_func_name: inception_preprocess
+  val_txt: ../data/ILSVRC2012/val_2015.txt
+  params:
+    mean_val:
+      - 128.0
+      - 128.0
+      - 128.0
+    resize_size:
+      - 395
+      - 395
+    crop_size: 395
+    input_scale: 0.0078125 # 1/128.0
+
+Inceptionv4:
+  name: inceptionv4
+  proto_file: ../models/caffe/inception/inception-v4.prototxt
+  blob_file: ../models/caffe/inception/inception-v4.caffemodel
+  pre_func_name: inception_preprocess
+  params:
+    mean_val:
+      - 128.0
+      - 128.0
+      - 128.0
+    resize_size:
+      - 320
+      - 320
+    crop_size: 299
+    input_scale: 0.0078125 # 1/128.0
+
+Squeezenetv1.0:
+  name: squeezenetv1.0
+  proto_file: ../models/caffe/squeezenet/squeezenet_v1.0.prototxt
+  blob_file: ../models/caffe/squeezenet/squeezenet_v1.0.caffemodel
+  pre_func_name: squeezenet_preprocess
+  params:
+    mean_val:
+      - 104.0
+      - 117.0
+      - 123.0
+    resize_size:
+      - 256
+      - 256
+    crop_size: 227
+
+Squeezenetv1.1:
+  name: squeezenetv1.1
+  proto_file: ../models/caffe/squeezenet/squeezenet_v1.1.prototxt
+  blob_file: ../models/caffe/squeezenet/squeezenet_v1.1.caffemodel
+  pre_func_name: squeezenet_preprocess
+  params:
+    mean_val:
+      - 104.0
+      - 117.0
+      - 123.0
+    resize_size:
+      - 256
+      - 256
+    crop_size: 227
+
+Densenet121:
+  name: densenet121
+  proto_file: ../models/caffe/densenet/DenseNet_121.prototxt
+  blob_file: ../models/caffe/densenet/DenseNet_121.caffemodel
+  pre_func_name: densenet_preprocess
+  params:
+    mean_val:
+      - 103.94
+      - 116.78
+      - 123.68
+    input_scale: 0.017
+    resize_size: 256
+    crop_size: 224
+
+Densenet161:
+  name: densenet161
+  proto_file: ../models/caffe/densenet/DenseNet_161.prototxt
+  blob_file: ../models/caffe/densenet/DenseNet_161.caffemodel
+  pre_func_name: densenet_preprocess
+  params:
+    mean_val:
+      - 103.94
+      - 116.78
+      - 123.68
+    input_scale: 0.017
+    resize_size: 256
+    crop_size: 224
+
+Densenet169:
+  name: densenet169
+  proto_file: ../models/caffe/densenet/DenseNet_169.prototxt
+  blob_file: ../models/caffe/densenet/DenseNet_169.caffemodel
+  pre_func_name: densenet_preprocess
+  params:
+    mean_val:
+      - 103.94
+      - 116.78
+      - 123.68
+    input_scale: 0.017
+    resize_size: 256
+    crop_size: 224
+
+Densenet201:
+  name: densenet201
+  proto_file: ../models/caffe/densenet/DenseNet_201.prototxt
+  blob_file: ../models/caffe/densenet/DenseNet_201.caffemodel
+  pre_func_name: densenet_preprocess
+  params:
+    mean_val:
+      - 103.94
+      - 116.78
+      - 123.68
+    input_scale: 0.017
+    resize_size: 256
+    crop_size: 224
+
+Vgg16:
+  name: vgg16
+  proto_file: ../models/caffe/vgg/vgg16.prototxt
+  blob_file: ../models/caffe/vgg/vgg16.caffemodel
+  pre_func_name: vgg_preprocess
+  params:
+    mean_val:
+      - 103.939
+      - 116.779
+      - 123.68
+    resize_size: 256
+    crop_size: 224
+
+Vgg19:
+  name: vgg19
+  proto_file: ../models/caffe/vgg/vgg19.prototxt
+  blob_file: ../models/caffe/vgg/vgg19.caffemodel
+  pre_func_name: vgg_preprocess
+  params:
+    mean_val:
+      - 103.939
+      - 116.779
+      - 123.68
+    resize_size: 256
+    crop_size: 224
